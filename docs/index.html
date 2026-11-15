@@ -1,315 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
+ 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+ 
+<!-- Baseball favicon -->
 <link rel="icon" type="image/png" href="baseball.png">
-    
-<title>Cameron Whittington | Baseball Highlights</title>
-
+ 
+<title>⚾ Cameron Whittington | Class of 2028 Baseball Player</title>
+ 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+ 
 <style>
+ 
+html{
+scroll-behavior:smooth;
+}
+ 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
-
+ 
 body{
-    background:linear-gradient(135deg,#0d1117,#161b22,#1f2937);
-    color:white;
-    overflow-x:hidden;
+background:linear-gradient(135deg,#0d1117,#161b22,#1f2937);
+color:white;
 }
-
+ 
+/* Navigation */
+ 
+.navbar{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(13,17,23,0.95);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+}
+ 
+.navbar ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+ 
+.navbar a{
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+ 
+.navbar a:hover{
+color:#FFD700;
+}
+ 
+/* Header */
+ 
 header{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
-
+ 
+.profile-pic{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:50%;
+border:5px solid #FFD700;
+margin-bottom:25px;
+}
+ 
 h1{
-    font-size:4rem;
-    color:#FFD700;
-    text-shadow:0 0 20px rgba(255,215,0,.5);
+font-size:4rem;
+color:#FFD700;
+text-shadow:0 0 25px rgba(255,215,0,.5);
 }
-
+ 
 .subtitle{
-    font-size:1.3rem;
-    margin:20px 0;
-    color:#d1d5db;
+margin-top:15px;
+color:#d1d5db;
+font-size:1.3rem;
 }
-
+ 
+.recruit-card{
+margin-top:25px;
+max-width:800px;
+background:rgba(255,215,0,.1);
+border:1px solid #FFD700;
+border-radius:15px;
+padding:20px;
+font-weight:600;
+}
+ 
 .btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:15px 35px;
-    background:#FFD700;
-    color:#111;
-    text-decoration:none;
-    border-radius:50px;
-    font-weight:bold;
-    transition:.3s;
+display:inline-block;
+margin-top:25px;
+padding:15px 35px;
+background:#FFD700;
+color:black;
+text-decoration:none;
+border-radius:50px;
+font-weight:bold;
+transition:.3s;
 }
-
+ 
 .btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 20px #FFD700;
+transform:translateY(-3px);
+box-shadow:0 0 20px #FFD700;
 }
-
+ 
 section{
-    padding:80px 10%;
+padding:80px 10%;
 }
-
+ 
 .section-title{
-    text-align:center;
-    font-size:2.5rem;
-    margin-bottom:50px;
-    color:#FFD700;
+text-align:center;
+font-size:2.7rem;
+color:#FFD700;
+margin-bottom:50px;
 }
-
-.about{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:40px;
-    align-items:center;
-}
-
-.about-card{
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,215,0,.2);
-    padding:30px;
-    border-radius:20px;
-    backdrop-filter:blur(12px);
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:25px;
-}
-
+ 
+.about-card,
 .stat-box{
-    background:rgba(255,255,255,.05);
-    text-align:center;
-    padding:30px;
-    border-radius:15px;
-    transition:0.3s;
+background:rgba(255,255,255,.05);
+border-radius:20px;
+border:1px solid rgba(255,215,0,.2);
+padding:30px;
 }
-
-.stat-box:hover{
-    transform:translateY(-10px);
-    border:1px solid gold;
+ 
+.about{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
 }
-
+ 
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+ 
+.stat-box{
+text-align:center;
+}
+ 
 .stat-box h3{
-    color:#FFD700;
-    font-size:2rem;
+color:#FFD700;
+font-size:2rem;
 }
-
-.video-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:25px;
-}
-
-.video-card{
-    background:rgba(255,255,255,.05);
-    border-radius:15px;
-    overflow:hidden;
-    transition:.3s;
-}
-
-.video-card:hover{
-    transform:scale(1.03);
-}
-
-.video-card iframe{
-    width:100%;
-    height:250px;
-    border:none;
-}
-
-.video-title{
-    padding:15px;
-}
-
-.contact{
-    text-align:center;
-}
-
+ 
 .contact-links{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-    margin-top:30px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+margin-top:30px;
 }
-
+ 
 .contact-links a{
-    text-decoration:none;
-    color:white;
-    background:#111827;
-    padding:15px 25px;
-    border-radius:50px;
-    transition:.3s;
-    border:1px solid rgba(255,215,0,.4);
+color:white;
+text-decoration:none;
+border:1px solid #FFD700;
+padding:15px 25px;
+border-radius:50px;
 }
-
+ 
 .contact-links a:hover{
-    background:#FFD700;
-    color:black;
+background:#FFD700;
+color:black;
 }
-
+ 
 footer{
-    text-align:center;
-    padding:30px;
-    background:#0d1117;
-    color:#9ca3af;
+text-align:center;
+background:#0d1117;
+padding:30px;
+color:#9ca3af;
 }
-
-.glow{
-    color:#FFD700;
-}
-
+ 
 @media(max-width:768px){
-    h1{
-        font-size:2.8rem;
-    }
+ 
+h1{
+font-size:2.8rem;
 }
+ 
+.navbar{
+flex-direction:column;
+gap:10px;
+}
+ 
+.navbar ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+}
+ 
 </style>
 </head>
+ 
 <body>
-
+ 
+<nav class="navbar">
+<div>⚾ Cameron Whittington</div>
+ 
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#profile">Profile</a></li>
+<li><a href="#highlights">Highlights</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+ 
 <header>
-    <h1>Cameron Whittington</h1>
-    <p class="subtitle">
-        High School Baseball Athlete • Dedicated Competitor • Future Collegiate Prospect
-    </p>
-
-    <a href="#highlights" class="btn">View Highlights</a>
+ 
+<!-- Add your photo file here -->
+<img src="profile.jpg" alt="Cameron Whittington" class="profile-pic">
+ 
+<h1>Cameron Whittington</h1>
+ 
+<p class="subtitle">
+Class of 2028 • Pitcher & Outfielder • Left-Handed Athlete
+</p>
+ 
+<div class="recruit-card">
+🎓 Graduation Year: 2028 |
+📏 Height: 5'8" |
+⚖️ Weight: 155 lbs |
+⚾ Primary Positions: Pitcher (P), Outfielder (OF) |
+🧤 Throws: Left |
+🏏 Bats: Left
+</div>
+ 
+<a href="mailto:camjw022@gmail.com" class="btn">
+Recruit Me
+</a>
+ 
+<a href="#highlights" class="btn">
+View Highlights
+</a>
+ 
 </header>
-
-<section>
-    <h2 class="section-title">About Me</h2>
-
-    <div class="about">
-        <div class="about-card">
-            <h3 class="glow">Athlete Profile</h3>
-            <br>
-            <p>
-                Welcome to my baseball highlight website. I am a hardworking
-                high school baseball player focused on developing my game,
-                competing at a high level, and continuing my baseball journey.
-                Here you'll find my highlights, accomplishments, and contact
-                information for coaches, recruiters, and supporters.
-            </p>
-        </div>
-
-        <div class="about-card">
-            <h3 class="glow">Goals</h3>
-            <br>
-            <p>
-                My goal is to continue improving both on and off the field,
-                demonstrate strong leadership, and pursue opportunities to
-                play baseball at the next level while maintaining excellence
-                in academics and athletics.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <h2 class="section-title">Baseball Highlights</h2>
-
-    <div class="stats">
-        <div class="stat-box">
-            <h3>100%</h3>
-            <p>Commitment</p>
-        </div>
-
-        <div class="stat-box">
-            <h3>24/7</h3>
-            <p>Work Ethic</p>
-        </div>
-
-        <div class="stat-box">
-            <h3>∞</h3>
-            <p>Passion For Baseball</p>
-        </div>
-    </div>
-</section>
-
-<section id="highlights">
-    <h2 class="section-title">Highlight Videos</h2>
-
-    <div class="video-grid">
-
-        <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
-            <div class="video-title">
-                <h3>Game Highlights</h3>
-            </div>
-        </div>
-
-        <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
-            <div class="video-title">
-                <h3>Offensive Highlights</h3>
-            </div>
-        </div>
-
-        <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
-            <div class="video-title">
-                <h3>Defensive Highlights</h3>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<section class="contact">
-    <h2 class="section-title">Contact & Social Media</h2>
-
-    <p>
-        Coaches, recruiters, and supporters can connect with me through the
-        platforms below.
-    </p>
-
-    <div class="contact-links">
-
-        <a href="https://www.youtube.com/@CameronW-11" target="_blank">
-            YouTube: CameronW-11
-        </a>
-
-        <a href="https://instagram.com/cj_ww21" target="_blank">
-            Instagram: @cj_ww21
-        </a>
-
-        <a href="mailto:camjw022@gmail.com">
-            Gmail: camjw022@gmail.com
-        </a>
-
-    </div>
-
-    <br><br>
-
-    <p>
-        Twitter: Add your Twitter username when available.
-    </p>
-
-</section>
-
-<footer>
-    © 2026 Cameron Whittington | Baseball Highlights
-</footer>
-
-</body>
-</html>
